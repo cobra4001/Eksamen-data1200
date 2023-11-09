@@ -1,3 +1,49 @@
+/* Variable Settings for Styling */
+:root { 
+
+}
+
+/* General Styling */
+main { /* <Main> Tag Styling */
+
+}
+section { /* <Section> Tag Styling */
+
+}
+h1 { /* <h1> Tag Styling */
+
+}
+figure { /* <figure> Tag Styling */
+
+}
+a { /* <a> Tag Styling */
+
+}
+figcaption { /* <figcaption> Tag Styling */
+
+}
+p,div,span { /* <p>, <div> and <span> Tag Styling */
+
+}
+footer { /* <footer> Tag Styling */
+
+}
+header { /* <header> Tag Styling */
+
+}
+ul { /* <ul> Tag Styling */
+
+}
+li { /* <li> Tag Styling */
+
+} 
+body { /* <body> Tag Styling */
+
+}
+
+
+
+
 h1{
 text-align: center;
 }
@@ -31,4 +77,18 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/* Phone/Tablet Styling */
+@media only screen and (max-width: 767px) {
+    
 }
