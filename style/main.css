@@ -84,6 +84,7 @@ li { /* <li> Tag Styling */
     left: 0;
     display: flex;
     flex-direction: column;
+    z-index: 10;
 }
 .navbar {
     position: sticky;
@@ -96,13 +97,15 @@ li { /* <li> Tag Styling */
     padding: 0;
 }
 .nav-item {
-    
+    flex-shrink: 1; 
+    padding-bottom: 0;
 }
 .nav-link {
     color: var(--primary-color);
     text-decoration: none;
     display: block;
     padding: 1rem;
+    padding-bottom: 0;
 }
 .site-current {
     padding: 1rem;
@@ -150,7 +153,6 @@ width: 100%;
         height: var(--nav-tablet-height);
         position: absolute;
         top: calc(100vh - var(--nav-tablet-height));
-        z-index: 10;
         align-items: center;
     }
     .nav-list {
@@ -160,12 +162,5 @@ width: 100%;
         justify-content: center;
         padding: 0;
     }
-    .nav-item {
-        flex-shrink: 1; 
-        padding-bottom: 0;
 
-    }
-    .nav-link {
-        padding-bottom: 0;
-    }
 }
