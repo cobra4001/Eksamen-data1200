@@ -1,14 +1,47 @@
 /* Variable Settings for Styling */
 :root { 
+    --primary-color: #DFE5D7;
+    --primary-contrast-color: #000000;
+    --secondary-color: #FFFF00;
+    --secondary-constrast-color: #0000FF;
+
+    /* Universal Variables */
+    --footer-height:50px;
+
+    /* Desktop Variables */
+    --nav-desktop-width: 250px;
+    --main-desktop-left-padding: var(--nav-desktop-width);
+
+    /* Tablet Variables */
+    --nav-tablet-width: 100vw;
+    --main-tablet-left-padding: 0;
+    --nav-tablet-height:100px;
 
 }
 
 /* General Styling */
+html { /* <html> Tag Styling */
+    height: 100vh;
+}
+body { /* <body> Tag Styling */
+    background: var(--primary-color);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
 main { /* <Main> Tag Styling */
+    position: relative;
+    padding-left: var(--main-desktop-left-padding);
 
+    min-height: calc(100vh - var(--nav-tablet-height) - var(--footer-height));
 }
 section { /* <Section> Tag Styling */
 
+}
+section h1 { /* <h1> Tag Styling Inside of <section> Tag*/
+    text-align: center;
 }
 h1 { /* <h1> Tag Styling */
 
@@ -26,10 +59,12 @@ p,div,span { /* <p>, <div> and <span> Tag Styling */
 
 }
 footer { /* <footer> Tag Styling */
-
+    height: var(--footer-height);
+    position: relative;
+    padding-left: var(--main-desktop-left-padding);
 }
 header { /* <header> Tag Styling */
-
+    position: relative;
 }
 ul { /* <ul> Tag Styling */
 
@@ -37,39 +72,52 @@ ul { /* <ul> Tag Styling */
 li { /* <li> Tag Styling */
 
 } 
-body { /* <body> Tag Styling */
 
+
+/* Navbar Styling */
+.site-header {
+    background: var(--primary-contrast-color);
+    height: 100%;
+    width: var(--nav-desktop-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
 }
-
-
-
-
-h1{
-text-align: center;
+.navbar {
+    position: sticky;
+    top: 0;
+    flex-grow: 1; 
 }
-
-/* Navbar styling */
-.navbar ul{
+.nav-list {
     list-style-type: none;
-    background-color: rgb(16, 16, 128);
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
-.navbar a{
+.nav-item {
+    
+}
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
     display: block;
-    padding: 30px;
-    text-align: center;
-    text-decoration: none;  
-    color: white; 
+    padding: 1rem;
 }
-.navbar a:hover{
-    background-color: black;
+.site-current {
+    padding: 1rem;
+    padding-bottom: 0;
+    color: var(--secondary-color);
+}
+.nav-item:hover .nav-link {
+    color: var(--secondary-color);
 }
 
-.navbar li{
-float: left;
-}
+
+
+
+
+
 
 /* Image settings */
 img{
@@ -89,6 +137,35 @@ width: 100%;
 
 
 /* Phone/Tablet Styling */
-@media only screen and (max-width: 767px) {
-    
+@media only screen and (max-width: 769px) {
+    main { 
+        padding-left: 0;
+    }
+    footer { 
+        padding-left: 0;
+    }
+    .site-header {
+        flex-direction: row;
+        width: var(--nav-tablet-width);
+        height: var(--nav-tablet-height);
+        position: absolute;
+        top: calc(100vh - var(--nav-tablet-height));
+        z-index: 10;
+        align-items: center;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+    .nav-item {
+        flex-shrink: 1; 
+        padding-bottom: 0;
+
+    }
+    .nav-link {
+        padding-bottom: 0;
+    }
 }
