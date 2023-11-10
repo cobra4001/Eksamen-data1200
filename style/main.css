@@ -1,5 +1,6 @@
 /* Variable Settings for Styling */
 :root { 
+    /* Color Palette */
     --primary-color: #DFE5D7;
     --primary-contrast-color: #000000;
     --secondary-color: #FFFF00;
@@ -34,19 +35,19 @@ body { /* <body> Tag Styling */
     color: var(--primary-contrast-color);
     font-size: clamp(0.8rem, 1vw, 1rem);;
 }
-main { /* <Main> Tag Styling */
+main { /* <main> Tag Styling */
     position: relative;
     padding: var(--page-general-padding);
     padding-left:  calc(var(--page-general-padding) + var(--main-desktop-left-padding));
     min-height: calc(100vh - var(--nav-tablet-height) - var(--footer-height));
 }
-section { /* <Section> Tag Styling */
+section { /* <section> Tag Styling */
     width: 100%;
 }
 section h1 { /* <h1> Tag Styling Inside of <section> Tag*/
     text-align: center; 
 }
-section figure {
+section figure { /* <figure> Tag Styling Inside of <section> Tag*/
     text-align: center;
     margin: auto;
     max-width: calc(100vw - var(--page-general-padding) - var(--image-desktop-width));
@@ -56,11 +57,11 @@ section figure {
     border-radius: 20px;
     overflow: hidden;
 }
-section figure a img {
+section figure a img { /* <img> Tag Styling Inside of <a>, <figure>, <section> Tag*/
     width: calc(100vw - var(--page-general-padding) - var(--image-desktop-width));
     height: calc((100vw - var(--page-general-padding) - var(--image-desktop-width)) * 9 / 16);
 }
-section figure figcaption {
+section figure figcaption { /* <figcaption> Tag Styling Inside of <figure>, <section> Tag*/
     position: absolute;
     z-index: 10;
     bottom: clamp(0.4rem, 1vw, 1rem);
