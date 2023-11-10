@@ -97,7 +97,7 @@ header { /* <header> Tag Styling */
     position: relative;
 }
 div,span,p { /* <div>, <span> and <p> Tag Styling */
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
 }
 
 
@@ -168,7 +168,7 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
     }
     footer { 
         position: relative;
-        width: calc(320px - 2*var(--page-general-padding) );
+        width: calc(320px - 2 * var(--page-general-padding) );
         padding: var(--page-general-padding);
         color: var(--primary-contrast-color);
     }
