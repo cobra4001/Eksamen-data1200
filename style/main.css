@@ -25,12 +25,9 @@
 
 
 /* General Styling */
-html{
-    height: 100vh;
-}
 body { /* <body> Tag Styling */
     background: var(--primary-color);
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -116,6 +113,7 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
     display: flex;
     flex-direction: column;
     z-index: 10;
+    border-right: 0.1rem dashed var(--primary-color);
 }
 .navbar {
     position: sticky;
@@ -185,10 +183,9 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
         
     }
     footer { 
-        position: relative;
+        position: absolute;
         width: calc(320px - 2 * var(--page-general-padding) );
-        padding: var(--page-general-padding);
-        color: var(--primary-contrast-color);
+        bottom: calc(3/7 * var(--nav-tablet-height));
     }
 
 
@@ -200,6 +197,14 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
         position: absolute;
         top: calc(100vh - var(--nav-tablet-height));
         align-items: center;
+        border: 0;
+        border-top: 0.1rem dashed var(--primary-color);
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        top: -50px;
+        right: 20px;
     }
     .nav-list {
         display: flex;
