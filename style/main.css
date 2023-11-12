@@ -1,5 +1,6 @@
 /* Variable Settings for Styling */
 :root { 
+    /* Color Palette */
     --primary-color: #DFE5D7;
     --primary-contrast-color: #000000;
     --secondary-color: #FFFF00;
@@ -26,7 +27,7 @@
 /* General Styling */
 body { /* <body> Tag Styling */
     background: var(--primary-color);
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -34,19 +35,20 @@ body { /* <body> Tag Styling */
     color: var(--primary-contrast-color);
     font-size: clamp(0.8rem, 1vw, 1rem);;
 }
-main { /* <Main> Tag Styling */
+main { /* <main> Tag Styling */
     position: relative;
     padding: var(--page-general-padding);
     padding-left:  calc(var(--page-general-padding) + var(--main-desktop-left-padding));
-    min-height: calc(100vh - var(--nav-tablet-height) - var(--footer-height));
+    min-height: 100vh;
+    
 }
-section { /* <Section> Tag Styling */
+section { /* <section> Tag Styling */
     width: 100%;
 }
-section h1 { /* <h1> Tag Styling Inside of <section> Tag*/
+section h1,section h2,section h3,section h4 { /* <h1> Tag Styling Inside of <section> Tag*/
     text-align: center; 
 }
-section figure {
+section figure { /* <figure> Tag Styling Inside of <section> Tag*/
     text-align: center;
     margin: auto;
     max-width: calc(100vw - var(--page-general-padding) - var(--image-desktop-width));
@@ -56,11 +58,11 @@ section figure {
     border-radius: 20px;
     overflow: hidden;
 }
-section figure a img {
+section figure a img { /* <img> Tag Styling Inside of <a>, <figure>, <section> Tag*/
     width: calc(100vw - var(--page-general-padding) - var(--image-desktop-width));
     height: calc((100vw - var(--page-general-padding) - var(--image-desktop-width)) * 9 / 16);
 }
-section figure figcaption {
+section figure figcaption { /* <figcaption> Tag Styling Inside of <figure>, <section> Tag*/
     position: absolute;
     z-index: 10;
     bottom: clamp(0.4rem, 1vw, 1rem);
@@ -88,16 +90,20 @@ footer { /* <footer> Tag Styling */
     width:  calc(var(--nav-desktop-width) - var(--nav-desktop-width)/4);
     bottom: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     padding: var(--page-general-padding);
-    z-index: 10;
+    z-index: 1;
     color: var(--primary-color);
 }
 header { /* <header> Tag Styling */
     position: relative;
 }
-div,span,p { /* <div>, <span> and <p> Tag Styling */
+section div,span,p { /* <div>, <span> and <p> Tag Styling */
     padding: 0.5rem;
+}
+section div {
+    margin: auto;
+    max-width: 40%;
 }
 
 
@@ -111,12 +117,14 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
     left: 0;
     display: flex;
     flex-direction: column;
-    z-index: 10;
+    z-index: 1;
+    border-right: 0.1rem dashed var(--primary-color);
 }
 .navbar {
     position: sticky;
     top: 0;
     flex-grow: 1; 
+    z-index: 11;
 }
 .nav-list {
     list-style-type: none;
@@ -142,6 +150,20 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
 .nav-item:hover .nav-link {
     color: var(--secondary-color);
 }
+.logo {
+    background: url("../media/left-logo-transparent.png");
+    background-size: contain; /* or 'cover', depending on your need */
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -40px;
+    right: 20;
+    transform: rotate(50deg);
+    z-index: -1;
+}
 
 
 
@@ -161,16 +183,22 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
 /* Phone/Tablet Styling */
 @media only screen and (max-width: 767px) {
     /* General Styling */
-    main { 
-        padding: var(--page-general-padding);
-        min-height: calc(100vh - var(--nav-tablet-height) - var(--footer-height) - 3* var(--page-general-padding));;
-        
+    main {
+        padding: 0;
+    }
+    main > :last-child { 
+        padding-bottom: calc(var(--nav-tablet-height) + 50px);
     }
     footer { 
-        position: relative;
+        position: fixed;
         width: calc(320px - 2 * var(--page-general-padding) );
-        padding: var(--page-general-padding);
-        color: var(--primary-contrast-color);
+        bottom: calc(6/8 * var(--nav-tablet-height));
+        padding-bottom: 0;
+        padding-left: 0;
+        height: calc(var(--footer-height)*2/3);
+    }
+    section div {
+        max-width: 90%;
     }
 
 
@@ -179,9 +207,17 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
         flex-direction: row;
         width: var(--nav-tablet-width);
         height: var(--nav-tablet-height);
-        position: absolute;
+        position: fixed;
         top: calc(100vh - var(--nav-tablet-height));
         align-items: center;
+        border: 0;
+        border-top: 0.1rem dashed var(--primary-color);
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        top: calc(-1 * var(--nav-tablet-height) + 50px);
+        right: 10px;
     }
     .nav-list {
         display: flex;
