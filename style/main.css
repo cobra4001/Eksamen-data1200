@@ -25,9 +25,12 @@
 
 
 /* General Styling */
+html{
+    height: 100vh;
+}
 body { /* <body> Tag Styling */
     background: var(--primary-color);
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -44,7 +47,7 @@ main { /* <main> Tag Styling */
 section { /* <section> Tag Styling */
     width: 100%;
 }
-section h1 { /* <h1> Tag Styling Inside of <section> Tag*/
+section h1,section h2,section h3,section h4 { /* <h1> Tag Styling Inside of <section> Tag*/
     text-align: center; 
 }
 section figure { /* <figure> Tag Styling Inside of <section> Tag*/
@@ -89,7 +92,7 @@ footer { /* <footer> Tag Styling */
     width:  calc(var(--nav-desktop-width) - var(--nav-desktop-width)/4);
     bottom: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     padding: var(--page-general-padding);
     z-index: 10;
     color: var(--primary-color);
@@ -142,6 +145,20 @@ div,span,p { /* <div>, <span> and <p> Tag Styling */
 }
 .nav-item:hover .nav-link {
     color: var(--secondary-color);
+}
+.logo {
+    background: url("../media/left-logo-transparent.png");
+    background-size: contain; /* or 'cover', depending on your need */
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -40px;
+    right: 20;
+    transform: rotate(50deg);
+    z-index: -1;
 }
 
 
