@@ -1,9 +1,9 @@
 /* Variable Settings for Styling */
 :root { 
     /* Color Palette */
-    --primary-color: #01070E;
-    --primary-contrast-color: #bab7f1;
-    --secondary-color: #E00B4B;
+    --primary-color: #DFE5D7;
+    --primary-contrast-color: #000000;
+    --secondary-color: #FFFF00;
     --secondary-constrast-color: #0000FF;
 
     /* Universal Variables */
