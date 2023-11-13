@@ -101,14 +101,14 @@ header { /* <header> Tag Styling */
 section div,span,p { /* <div>, <span> and <p> Tag Styling */
     padding: 0.5rem;
 }
-section div {
+section div { /* <div> Tag Styling Inside of <section>*/
     margin: auto;
     max-width: 40%;
 }
 
 
 /* Navbar Styling */
-.site-header {
+.site-header { /* .site-header Class Styling as part of <header>*/
     background: var(--primary-contrast-color);
     height: 100%;
     width: var(--nav-desktop-width);
@@ -120,37 +120,37 @@ section div {
     z-index: 5;
     border-right: 0.1rem dashed var(--primary-color);
 }
-.navbar {
+.navbar { /* .site-header Class Styling Inside of <nav>*/
     position: sticky;
     top: 0;
     flex-grow: 1; 
     z-index: 11;
 }
-.nav-list {
+.nav-list { /* .nav-list Class Styling Inside of .navbar */
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-.nav-item {
+.nav-item { /* .nav-item Class Styling Inside of .nav-list */
     flex-shrink: 1; 
     padding-bottom: 0;
 }
-.nav-link {
+.nav-link { /* .nav-link Class Styling Inside of .nav-item */
     color: var(--primary-color);
     text-decoration: none;
     display: block;
     padding: 1rem;
     padding-bottom: 0;
 }
-.site-current {
+.site-current { /* .site-current Class Styling Inside of .site-header */
     padding: 1rem;
     padding-bottom: 0;
     color: var(--secondary-color);
 }
-.nav-item:hover .nav-link {
+.nav-item:hover .nav-link { /* .site-item Class Styling When hovered Change .nav-link */
     color: var(--secondary-color);
 }
-.logo {
+.logo { /* .logo Class Styling Inside of .site-header */
     background: url("../media/left-logo-transparent.png");
     background-size: contain; /* or 'cover', depending on your need */
     width: 200px;
@@ -183,13 +183,13 @@ section div {
 /* Phone/Tablet Styling */
 @media only screen and (max-width: 767px) {
     /* General Styling */
-    main {
+    main { 
         padding: 0;
     }
-    main > :last-child { 
+    main > :last-child { /* Added Style Spacing to Bottom to Avoid Navbar Being Infront */
         padding-bottom: calc(var(--nav-tablet-height) + 50px);
     }
-    footer { 
+    footer { /* Added Style to Change Position */
         position: fixed;
         width: calc(320px - 2 * var(--page-general-padding) );
         bottom: calc(6/8 * var(--nav-tablet-height));
@@ -197,13 +197,13 @@ section div {
         padding-left: 0;
         height: calc(var(--footer-height)*2/3);
     }
-    section div {
+    section div { /* Changed Style for Better Space */
         max-width: 90%;
     }
 
 
     /* Navbar Styling */
-    .site-header {
+    .site-header { /* Added Style to Change Size of Nav/Header */
         flex-direction: row;
         width: var(--nav-tablet-width);
         height: var(--nav-tablet-height);
@@ -213,24 +213,24 @@ section div {
         border: 0;
         border-top: 0.1rem dashed var(--primary-color);
     }
-    .logo {
+    .logo { /* Smaller Logo */
         width: 50px;
         height: 50px;
         top: calc(-1 * var(--nav-tablet-height) + 50px);
         right: 10px;
     }
-    .nav-list {
+    .nav-list { /* Added Style to Space Items in Relation to Eachother */
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0;
     }
-    section figure {
+    section figure { /* Changed with context of tablet sizing and under */
         max-width: calc(100vw - var(--page-general-padding) - var(--image-tablet-width));
         max-height: calc((100vw - var(--page-general-padding) - var(--image-tablet-width)) * 9 / 16);
     }
-    section figure a img {
+    section figure a img { /* Changed with context of tablet sizing and under */
         width: calc(100vw - var(--page-general-padding) - var(--image-tablet-width));
         height: calc((100vw - var(--page-general-padding) - var(--image-tablet-width)) * 9 / 16);
     }
