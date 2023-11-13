@@ -64,7 +64,7 @@ section figure a img { /* <img> Tag Styling Inside of <a>, <figure>, <section> T
 }
 section figure figcaption { /* <figcaption> Tag Styling Inside of <figure>, <section> Tag*/
     position: absolute;
-    z-index: 10;
+    z-index: 4;
     bottom: clamp(0.4rem, 1vw, 1rem);
     right: clamp(0.4rem, 1vw, 1rem);
     background-color: var(--primary-color);
